@@ -46,6 +46,9 @@ btn.addEventListener("click",
         let score = 0;
         console.log("punteggio iniziale:",  score);
 
+        // prendo l'elemento della pagina
+        const userScore = document.getElementById("user_score");
+
 
         /*******CREO LA GRIGLIA DINAMICA******/
 
@@ -66,8 +69,7 @@ btn.addEventListener("click",
             cell.addEventListener("click",
                 function(){
 
-                    let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi
-                    
+                    let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi                  
 
                     for(j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
                         //se il numero nella cella = ad un numero dell'array -> bomb
@@ -75,7 +77,8 @@ btn.addEventListener("click",
                             safe = false;
                             cell.classList.add("bomb");
                             //quando becca la bomba compare il punteggio
-                            console.log("hai perso. Il tuo punteggio è", score);
+                            userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
+                            // console.log("hai perso. Il tuo punteggio è", score);
                         } 
                     }
 
@@ -86,7 +89,8 @@ btn.addEventListener("click",
                     }
 
                     if(score === 100 - 16){
-                        console.log("Congratulazioni, hai vinto!", score);
+                        userScore.innerHTML=`Congratulazioni, hai vinto! Il tuo punteggio è di: ${score}`;
+                        // console.log("Congratulazioni, hai vinto!", score);
                     }
                 }
             );
