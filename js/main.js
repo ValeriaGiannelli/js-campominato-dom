@@ -23,7 +23,7 @@ const arrayBombs = [];
 // devo creare 16 numeri casuali, quindi:
 while (arrayBombs.length < 16){ // continua finché il mio array non è di 16 numeri
     // creo un numero randomico
-    let randomNum = generateRandomNum(1, 16);
+    let randomNum = generateRandomNum(1, 100);
      // se questo numero non è dentro l'array -> lo inserisco con push
      if(!arrayBombs.includes(randomNum)){
         arrayBombs.push(randomNum);
@@ -31,14 +31,7 @@ while (arrayBombs.length < 16){ // continua finché il mio array non è di 16 nu
 
 } 
 
-console.log(arrayBombs)
-
-
-   
-
-    // altrimenti continua a generare
-
-    
+console.log(arrayBombs);  
 
 
 
@@ -58,16 +51,24 @@ for(i = 1; i <= 100; i++){
     // inserisco che ogni cella abbia il suo numero
     cell.append(i);
 
-
     // aggiungo un click ad ogni elemento
     cell.addEventListener("click",
         function(){
             // aggiungo una classe alla cella selezionata
-            cell.classList.add("clicked")
+            // cell.classList.add("clicked");
 
-            // In seguito l’utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
+            for(j = 0; j < arrayBombs.length; j++){
 
-            // Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
+                if(parseInt(cell.innerText) === arrayBombs[j]){ //se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
+                    console.log("il numero della cella è:", parseInt(cell.innerText));
+                    console.log("il numero della bomba è:", arrayBombs[j]);
+                    cell.classList.add("bomb");
+                } else { // Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
+                    cell.classList.add("safe");
+                }
+            }
+           
+
 
             // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
 
