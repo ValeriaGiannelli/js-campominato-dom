@@ -73,6 +73,9 @@ btn.addEventListener("click",
         // prendo l'elemento della pagina
         const userScore = document.getElementById("user_score");
 
+        // prendo l'elemento di end game
+        const endGame = document.querySelector(".end_game");
+
  
 
         // CREO LA GRIGLIA DINAMICA
@@ -112,7 +115,10 @@ btn.addEventListener("click",
                         //se il numero nella cella = ad un numero dell'array -> bomb
                         if(parseInt(cell.innerText) === arrayBombs[j]){ 
                             safe = false;
+                            // coloro la cella di ross
                             cell.classList.add("bomb");
+                            // mostro il div di fine gioco
+                            endGame.classList.add("show");
                             //quando becca la bomba compare il punteggio
                             userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
                             // console.log("hai perso. Il tuo punteggio è", score);

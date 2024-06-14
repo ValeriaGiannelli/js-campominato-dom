@@ -43,6 +43,15 @@ main{
     display: none;
 }
 
+/* end game */
+.end_game{
+    width: 500px;
+    height: 500px;
+    background-color: hsla(271, 76%, 53%, 0.361);
+    position: absolute;
+    display: none;
+}
+
 /* al click del bottone si mostra la griglia */
 .show{
     display: flex;
@@ -68,14 +77,7 @@ main{
     background-color:cornflowerblue;
 }
 
-/* end game */
-.end_game{
-    width: 500px;
-    height: 500px;
-    background-color: blueviolet;
-    position: absolute;
-    display: none;
-}
+
 
 
 /* FOOTER */
