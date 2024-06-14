@@ -55,3 +55,11 @@ main{
 .clicked{
     background-color: aquamarine;
 }
+
+.bomb{
+    background-color: red;
+}
+
+.safe{
+    background-color:cornflowerblue;
+}
