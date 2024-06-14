@@ -58,21 +58,27 @@ btn.addEventListener("click",
             // inserisco che ogni cella abbia il suo numero
             cell.append(i);
 
-            // aggiungo un click ad ogni elemento se la cella che mi clicca ha lo stesso valore di un numero contenuto nell'array number allora bomba -> altrimenti continua
+            // aggiungo un click ad ogni elemento se la cella che mi clicca ha lo stesso valore di un numero contenuto nell'arrayBombs allora bomba -> altrimenti continua
             cell.addEventListener("click",
                 function(){
 
-                    for(j = 0; j < arrayBombs.length; j++){
+                    let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi
 
-                        if(parseInt(cell.innerText) === arrayBombs[j]){ //se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
-                            console.log("il numero della cella è:", parseInt(cell.innerText));
-                            console.log("il numero della bomba è:", arrayBombs[j]);
+                    for(j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
+                        //se il numero nella cella = ad un numero dell'array -> bomb
+                        if(parseInt(cell.innerText) === arrayBombs[j]){ 
+                            safe = false;
                             cell.classList.add("bomb");
-                        } else { // Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
-                            cell.classList.add("safe");
-                        }
+                        } 
                     }
-                
+
+                    if(safe){ // se non ha preso una bomaba continua.
+                        cell.classList.add("safe");
+                    }
+
+                    
+                    
+
 
                     // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
 
