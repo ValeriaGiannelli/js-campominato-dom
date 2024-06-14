@@ -20,7 +20,7 @@ const btn = document.querySelector(".start_game");
 btn.addEventListener("click", 
     function(){
 
-        // CREO L'ARRAY DEI NUMERI CASUALI
+        /****** CREO L'ARRAY DEI NUMERI CASUALI ********/
 
         // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
 
@@ -42,8 +42,12 @@ btn.addEventListener("click",
 
         console.log(arrayBombs);  
 
+        // punteggio iniziale della persona
+        let score = 0;
+        console.log("punteggio iniziale:",  score);
 
-        // CREO LA GRIGLIA DINAMICA
+
+        /*******CREO LA GRIGLIA DINAMICA******/
 
         // prendo l'elemento nella quale dovrà comparire
         const container = document.querySelector(".grid");
@@ -63,27 +67,27 @@ btn.addEventListener("click",
                 function(){
 
                     let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi
+                    
 
                     for(j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
                         //se il numero nella cella = ad un numero dell'array -> bomb
                         if(parseInt(cell.innerText) === arrayBombs[j]){ 
                             safe = false;
                             cell.classList.add("bomb");
+                            //quando becca la bomba compare il punteggio
+                            console.log("hai perso. Il tuo punteggio è", score);
                         } 
                     }
 
                     if(safe){ // se non ha preso una bomaba continua.
                         cell.classList.add("safe");
+                        score = score + 1; //score lo dichiaro fuori dal FOR perché altrimenti mi riparte da 0
+                        console.log("punteggio", score);
                     }
 
-                    
-                    
-
-
-                    // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
-
-                    // al click stampo in console il "testo" contenuto in ogni cella
-                    console.log(cell.innerText);
+                    if(score === 100 - 16){
+                        console.log("Congratulazioni, hai vinto!", score);
+                    }
                 }
             );
             // lo inserisco nel contenitore
