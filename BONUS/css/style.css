@@ -47,9 +47,24 @@ main{
 .end_game{
     width: 500px;
     height: 500px;
-    background-color: hsla(271, 76%, 53%, 0.361);
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
     display: none;
+}
+
+.end_game.lose{
+    background-color: hsla(8, 76%, 53%, 0.361);
+    text-shadow: 2px 5px 5px red;
+}
+
+.end_game.win{
+    background-color: hsla(119, 76%, 53%, 0.361);
+    text-shadow: 2px 5px 5px green;
 }
 
 /* al click del bottone si mostra la griglia */
