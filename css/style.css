@@ -63,3 +63,12 @@ main{
 .safe{
     background-color:cornflowerblue;
 }
+
+
+
+/* FOOTER */
+footer{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
