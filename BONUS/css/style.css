@@ -29,6 +29,7 @@ h1{
 main{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 /* grandezza della griglia */
@@ -67,6 +68,14 @@ main{
     background-color:cornflowerblue;
 }
 
+/* end game */
+.end_game{
+    width: 500px;
+    height: 500px;
+    background-color: blueviolet;
+    position: absolute;
+    display: none;
+}
 
 
 /* FOOTER */
