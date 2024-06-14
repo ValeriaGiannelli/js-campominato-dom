@@ -1,4 +1,3 @@
-
 /* codice generale */
 *{
     margin: 0;
@@ -17,11 +16,9 @@ h1{
     padding-bottom: 30px;
 }
 
-/* bottone e selettore difficoltà */
-.start_game, #difficulty{
+.start_game{
     padding: 10px 20px;
 }
-
 
 
 
@@ -54,18 +51,24 @@ main{
     border: 1px solid black;
 }
 
-/* 
-.box_81{
-    width: calc(100% / 9)!important;
-    height: calc(100% / 9)!important;
-}
-
-.box_49{
-    width: calc(100% / 7) !important;
-    height: calc(100% / 7) !important;
-} */
-
 /* click della box */
 .clicked{
     background-color: aquamarine;
+}
+
+.bomb{
+    background-color: red;
+}
+
+.safe{
+    background-color:cornflowerblue;
+}
+
+
+
+/* FOOTER */
+footer{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
 }
