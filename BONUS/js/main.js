@@ -119,6 +119,7 @@ btn.addEventListener("click",
                             cell.classList.add("bomb");
                             // mostro il div di fine gioco
                             endGame.classList.add("show");
+                            endGame.classList.add("loose");
                             //quando becca la bomba compare il punteggio
                             userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
                             // console.log("hai perso. Il tuo punteggio è", score);
@@ -132,6 +133,8 @@ btn.addEventListener("click",
                     }
 
                     if(score === numCell - 16){
+                        endGame.classList.add("show");
+                        endGame.classList.add("win");
                         userScore.innerHTML=`Congratulazioni, hai vinto! Il tuo punteggio è di: ${score}`;
                         // console.log("Congratulazioni, hai vinto!", score);
                     }
