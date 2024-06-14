@@ -76,6 +76,10 @@ btn.addEventListener("click",
         // prendo l'elemento di end game
         const endGame = document.querySelector(".end_game");
 
+        // condizione per vedere se ha già giocato
+        if(endGame.classList.contains("show")){
+            endGame.classList.remove("show");
+        }
  
 
         // CREO LA GRIGLIA DINAMICA
