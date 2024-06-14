@@ -107,7 +107,12 @@ btn.addEventListener("click",
             // inserisco che ogni cella abbia il suo numero
             cell.append(i);
 
-
+            // inserisco una classe specifica per le bombe, unicamente per indicarle
+            for(j = 0; j < arrayBombs.length; j++){
+                if(parseInt(cell.innerText) === arrayBombs[j]){ 
+                    cell.classList.add("bomb");
+                } 
+            }
 
             // aggiungo un click ad ogni elemento se la cella che mi clicca ha lo stesso valore di un numero contenuto nell'arrayBombs allora bomba -> altrimenti continua
             cell.addEventListener("click",
@@ -115,18 +120,26 @@ btn.addEventListener("click",
 
                     let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi                  
 
-                    for(j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
+                    for(let j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
                         //se il numero nella cella = ad un numero dell'array -> bomb
                         if(parseInt(cell.innerText) === arrayBombs[j]){ 
                             safe = false;
-                            // coloro la cella di ross
-                            cell.classList.add("bomb");
+                            // se clicca sulla bomba tutti i div devono mostrarsi
+
+                            // prendo l'array di div con le bombe
+                            const cellBombs = document.querySelectorAll(".bomb");
+                            console.log(cellBombs);
+                            
+                            // aggiungo ad ogni elemento dell'array la classe cliccato
+                            for(let k = 0; k < cellBombs.length; k++){
+                                cellBombs[k].classList.add("bomb_clicked")
+                            }
+
                             // mostro il div di fine gioco
                             endGame.classList.add("show");
                             endGame.classList.add("loose");
                             //quando becca la bomba compare il punteggio
                             userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
-                            // console.log("hai perso. Il tuo punteggio è", score);
                         } 
                     }
 

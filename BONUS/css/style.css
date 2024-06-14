@@ -80,11 +80,7 @@ main{
 }
 
 /* click della box */
-.clicked{
-    background-color: aquamarine;
-}
-
-.bomb{
+.bomb_clicked{
     background-color: red;
 }
 
