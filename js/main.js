@@ -9,13 +9,37 @@
 
 
 
+
+
+// CREO L'ARRAY DEI NUMERI CASUALI
+
+// Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
+
+// creo un array vuoto
+
+
+// inserisco in questo array i numeri casuali
+
+
+
+// devo creare 16 numeri casuali, quindi:
+
+// creo un numero randomico
+
+    // se questo numero non è dentro l'array -> lo inserisco con push
+
+    // altrimenti continua a generare
+
+    // continua finché il mio array non è di 16 numeri
+
+
+
+
 // CREO LA GRIGLIA DINAMICA
 
 // prendo l'elemento nella quale dovrà comparire
 const container = document.querySelector(".grid");
 // console.log(container);
-
-// Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
 
 // creo la griglia interna andando a creare un elemento per ogni spazio che ho (in questo caso 10*10 = 100)
 for(i = 1; i <= 100; i++){
