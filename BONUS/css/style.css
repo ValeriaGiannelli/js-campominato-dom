@@ -1,0 +1,71 @@
+
+/* codice generale */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* HEADER */
+header{
+    text-align: center;
+    padding: 40px;
+}
+
+h1{
+    padding-bottom: 30px;
+}
+
+/* bottone e selettore difficoltà */
+.start_game, #difficulty{
+    padding: 10px 20px;
+}
+
+
+
+
+/* MAIN */
+main{
+    display: flex;
+    justify-content: center;
+}
+
+/* grandezza della griglia */
+.grid{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    border: 1px solid black;
+    display: none;
+}
+
+/* al click del bottone si mostra la griglia */
+.show{
+    display: flex;
+}
+
+/* grandezza delle box */
+.box{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
+
+/* 
+.box_81{
+    width: calc(100% / 9)!important;
+    height: calc(100% / 9)!important;
+}
+
+.box_49{
+    width: calc(100% / 7) !important;
+    height: calc(100% / 7) !important;
+} */
+
+/* click della box */
+.clicked{
+    background-color: aquamarine;
+}
