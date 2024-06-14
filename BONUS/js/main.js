@@ -122,10 +122,8 @@ btn.addEventListener("click",
 
                     for(let j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
                         //se il numero nella cella = ad un numero dell'array -> bomb
-                        if(parseInt(cell.innerText) === arrayBombs[j]){ 
-                            safe = false;
-                            // se clicca sulla bomba tutti i div devono mostrarsi
-
+                        if(parseInt(cell.innerText) === arrayBombs[j]){ // se clicca sulla bomba tutti i div devono mostrarsi
+                            safe = false;                             
                             // prendo l'array di div con le bombe
                             const cellBombs = document.querySelectorAll(".bomb");
                             console.log(cellBombs);
