@@ -72,14 +72,29 @@ btn.addEventListener("click",
 
         // prendo l'elemento della pagina
         const userScore = document.getElementById("user_score");
+        userScore.innerHTML='';
 
-        // prendo l'elemento di end game
-        const endGame = document.querySelector(".end_game");
+        // prendo l'elemento di end game generale
+        // const endGame = document.querySelector(".end_game");
+        // console.log(endGame);
 
-        // condizione per vedere se ha già giocato
-        if(endGame.classList.contains("show")){
-            endGame.classList.remove("show");
+        // // condizione per vedere se ha già giocato
+        // if(endGame.classList.contains("show")){
+        //     endGame.classList.remove("show");
+        // }
+
+        // prendo gli elementi per end_game di vincita e di perdita
+        const endGame_win = document.querySelector(".win")
+        const endGame_lose = document.querySelector(".lose")
+
+        if(endGame_win.classList.contains("show")){
+            endGame_win.classList.remove("show");
         }
+
+        if(endGame_lose.classList.contains("show")){
+            endGame_lose.classList.remove("show");
+        }
+
  
 
         // CREO LA GRIGLIA DINAMICA
@@ -130,12 +145,13 @@ btn.addEventListener("click",
                             
                             // aggiungo ad ogni elemento dell'array la classe cliccato
                             for(let k = 0; k < cellBombs.length; k++){
-                                cellBombs[k].classList.add("bomb_clicked")
+                                cellBombs[k].classList.add("bomb_clicked");
+                                cellBombs[k].innerHTML = `<img src="img/boss.png" alt="">`;
                             }
 
                             // mostro il div di fine gioco
-                            endGame.classList.add("show");
-                            endGame.classList.add("loose");
+                            endGame_lose.classList.add("show");
+                            // endGame.classList.add("lose");
                             //quando becca la bomba compare il punteggio
                             userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
                         } 
@@ -143,13 +159,14 @@ btn.addEventListener("click",
 
                     if(safe){ // se non ha preso una bomaba continua.
                         cell.classList.add("safe");
+                        cell.innerHTML = `<img src="img/campifire.png" alt="">`;
                         score = score + 1; //score lo dichiaro fuori dal FOR perché altrimenti mi riparte da 0
                         console.log("punteggio", score);
                     }
 
                     if(score === numCell - 16){
-                        endGame.classList.add("show");
-                        endGame.classList.add("win");
+                        // endGame.classList.add("win");
+                        endGame_win.classList.add("show");
                         userScore.innerHTML=`Congratulazioni, hai vinto! Il tuo punteggio è di: ${score}`;
                         // console.log("Congratulazioni, hai vinto!", score);
                     }
