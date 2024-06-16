@@ -73,7 +73,7 @@ main{
     text-shadow: 1px 1px 2px black, 0px 0px 74px black, 0px 1px 70px black;
 }
 
-.end_game.lose h2{
+.end_game.lose h2, footer h2{
     color: brown;
 }
 
@@ -82,7 +82,7 @@ main{
 }
 
 /* titolo della fine del gioco */
-.end_game.lose h2, .end_game.win h2{
+h2{
     width: 100%;
     text-align: center;
     background-color: #0000008a;
