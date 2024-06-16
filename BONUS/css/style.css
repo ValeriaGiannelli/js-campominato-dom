@@ -6,10 +6,20 @@
     box-sizing: border-box;
 }
 
+#container{
+    background-image: url(../img/elden_ring.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /* HEADER */
 header{
-    text-align: center;
+    text-align: end;
     padding: 40px;
 }
 
@@ -57,14 +67,27 @@ main{
     display: none;
 }
 
-.end_game.lose{
-    background-color: hsla(8, 76%, 53%, 0.361);
-    text-shadow: 2px 5px 5px red;
+/* bacground della scritta */
+.end_game.lose, .end_game.win{
+    background-color: hsla(0, 4%, 16%, 0.361);
+    text-shadow: 1px 1px 2px black, 0px 0px 74px black, 0px 1px 70px black;
 }
 
-.end_game.win{
-    background-color: hsla(119, 76%, 53%, 0.361);
-    text-shadow: 2px 5px 5px green;
+.end_game.lose h2{
+    color: brown;
+}
+
+.end_game.win h2{
+    color: yellow;
+}
+
+/* titolo della fine del gioco */
+.end_game.lose h2, .end_game.win h2{
+    width: 100%;
+    text-align: center;
+    background-color: #0000008a;
+    box-shadow: 3px 0px 25px black;
+    font-weight: lighter;
 }
 
 /* al click del bottone si mostra la griglia */
@@ -84,8 +107,10 @@ main{
     background-color: red;
 }
 
-.safe{
-    background-color:cornflowerblue;
+/* immagine che compare quando clicca sulla bomba */
+.bomb_clicked img, .safe img{
+    width: 100%;
+    height: 100%;
 }
 
 
