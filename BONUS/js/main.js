@@ -70,18 +70,9 @@ btn.addEventListener("click",
         let score = 0;
         console.log("punteggio iniziale:",  score);
 
-        // prendo l'elemento della pagina
+        // prendo l'elemento della pagina riguardante il punteggio
         const userScore = document.getElementById("user_score");
         userScore.innerHTML='';
-
-        // prendo l'elemento di end game generale
-        // const endGame = document.querySelector(".end_game");
-        // console.log(endGame);
-
-        // // condizione per vedere se ha già giocato
-        // if(endGame.classList.contains("show")){
-        //     endGame.classList.remove("show");
-        // }
 
         // prendo gli elementi per end_game di vincita e di perdita
         const endGame_win = document.querySelector(".win")
@@ -135,15 +126,18 @@ btn.addEventListener("click",
 
                     let safe = true; //condizione di partenza altrimenti mi aggiungeva sempre entrambe le classi                  
 
-                    for(let j = 0; j < arrayBombs.length; j++){ //cerca dentro all'array se
+                    // faccio un ciclo for per cercare dentro all'array delle bombe se il numero cliccato è presente anche lì
+                    for(let j = 0; j < arrayBombs.length; j++){ 
                         //se il numero nella cella = ad un numero dell'array -> bomb
-                        if(parseInt(cell.innerText) === arrayBombs[j]){ // se clicca sulla bomba tutti i div devono mostrarsi
-                            safe = false;                             
-                            // prendo l'array di div con le bombe
+                        if(parseInt(cell.innerText) === arrayBombs[j]){ 
+                            // la condizione diventa falsa
+                            safe = false;    
+                            // se clicca sulla bomba tutti i div devono mostrarsi:                         
+                            // creo un array coi div che hanno la classe bomb
                             const cellBombs = document.querySelectorAll(".bomb");
                             console.log(cellBombs);
                             
-                            // aggiungo ad ogni elemento dell'array la classe cliccato
+                            // aggiungo ad ogni elemento di questo array la classe cliccato così che mostri le bombe
                             for(let k = 0; k < cellBombs.length; k++){
                                 cellBombs[k].classList.add("bomb_clicked");
                                 cellBombs[k].innerHTML = `<img src="img/boss.png" alt="">`;
@@ -151,7 +145,7 @@ btn.addEventListener("click",
 
                             // mostro il div di fine gioco
                             endGame_lose.classList.add("show");
-                            // endGame.classList.add("lose");
+                           
                             //quando becca la bomba compare il punteggio
                             userScore.innerHTML=`Mi dispiace, hai perso! Il tuo punteggio è di: ${score}`;
                         } 
@@ -165,7 +159,7 @@ btn.addEventListener("click",
                     }
 
                     if(score === numCell - 16){
-                        // endGame.classList.add("win");
+                        // mostro la schermata di vincita
                         endGame_win.classList.add("show");
                         userScore.innerHTML=`Congratulazioni, hai vinto! Il tuo punteggio è di: ${score}`;
                         // console.log("Congratulazioni, hai vinto!", score);
